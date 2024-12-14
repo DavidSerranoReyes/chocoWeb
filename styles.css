@@ -238,7 +238,33 @@ footer a:hover {
 }
 
 /* Diseño Responsivo */
+@media (max-width: 1024px) {
+  /* Para tabletas en orientación horizontal */
+  .hero .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero .hero-text p {
+    font-size: 18px;
+  }
+
+  .productos h2 {
+    font-size: 28px;
+  }
+
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 80%; /* Cambiar el ancho para ajustarse a pantallas más pequeñas */
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Para dispositivos móviles */
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -272,7 +298,44 @@ footer a:hover {
   }
 
   .producto {
-    width: 90%;
+    width: 90%; /* El ancho de los productos se adapta más */
     margin-bottom: 20px;
+  }
+
+  .carousel-item img {
+    height: auto; /* Asegura que las imágenes no sean demasiado altas */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Para dispositivos móviles pequeños */
+  header nav ul li a {
+    font-size: 14px; /* Reducir el tamaño de los enlaces */
+  }
+
+  .hero .hero-text h1 {
+    font-size: 28px; /* Ajustar tamaño del título */
+  }
+
+  .hero .hero-text p {
+    font-size: 14px; /* Ajustar tamaño del texto */
+  }
+
+  .productos h2 {
+    font-size: 24px;
+  }
+
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 100%; /* Hacer que los productos ocupen todo el ancho */
+    margin-bottom: 20px;
+  }
+
+  .btn-producto {
+    font-size: 14px; /* Reducir tamaño del texto del botón */
   }
 }
