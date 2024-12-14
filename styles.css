@@ -22,6 +22,7 @@ header {
   background-color: #3e2723; /* Color oscuro de chocolate */
   position: relative;
   z-index: 1; /* Aseguramos que el encabezado esté sobre el carrusel */
+  flex-wrap: wrap; /* Esto permite que los elementos se ajusten mejor en pantallas pequeñas */
 }
 
 header .logo img {
@@ -31,6 +32,7 @@ header .logo img {
 header nav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap; /* Asegura que los elementos se acomoden en pantallas pequeñas */
 }
 
 header nav ul li {
@@ -64,37 +66,20 @@ header nav ul li a {
 .hero {
   position: relative;
   width: 100%;
-  height: 700px; /* Ajusta la altura según sea necesario */
-  overflow: hidden; /* Oculta las imágenes fuera del contenedor */
-  z-index: 0; /* Asegura que las imágenes estén detrás del encabezado */
+  height: 500px; /* Ajusta la altura para pantallas más pequeñas */
+  overflow: hidden;
+  z-index: 0;
 }
 
 .carousel {
   display: flex;
   width: 300%; /* Asegura que abarque el 300% para tres imágenes */
-  animation: slide 15s infinite; /* Animación de deslizamiento */
+  animation: slide 15s infinite;
   margin: 0;
 }
 
 .carousel-item {
-  width: 33.33%; /* Cada imagen ocupa el 33.33% del contenedor */
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%; /* Hace que la imagen ocupe el contenedor */
-  object-fit: cover; /* Asegura que la imagen no se deforme */
-  display: block;
-}
-
-/* Agregamos duplicación de imágenes */
-.carousel {
-  display: flex;
-  width: 400%; /* Aumentamos al 400% para cubrir la imagen duplicada */
-}
-
-.carousel-item {
-  width: 25%; /* Cada imagen ocupa el 25% del contenedor, ya que tenemos 4 imágenes */
+  width: 33.33%;
 }
 
 .carousel-item img {
@@ -103,22 +88,38 @@ header nav ul li a {
   object-fit: cover;
 }
 
+/* Agregamos duplicación de imágenes */
+.carousel {
+  display: flex;
+  width: 400%;
+}
+
+.carousel-item {
+  width: 25%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto; /* Asegura que las imágenes no sean demasiado altas */
+  object-fit: cover;
+}
+
 /* Animación del carrusel */
 @keyframes slide {
   0% {
-    transform: translateX(0); /* Comienza en la primera imagen */
+    transform: translateX(0);
   }
   25% {
-    transform: translateX(-25%); /* Desliza a la segunda imagen */
+    transform: translateX(-25%);
   }
   50% {
-    transform: translateX(-50%); /* Desliza a la tercera imagen */
+    transform: translateX(-50%);
   }
   75% {
-    transform: translateX(-75%); /* Desliza a la cuarta imagen */
+    transform: translateX(-75%);
   }
   100% {
-    transform: translateX(0); /* Regresa a la primera imagen */
+    transform: translateX(0);
   }
 }
 
@@ -130,7 +131,7 @@ header nav ul li a {
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  z-index: 2; /* Asegura que el texto esté por encima del carrusel */
+  z-index: 2;
 }
 
 .hero-text h1 {
@@ -258,7 +259,7 @@ footer a:hover {
   }
 
   .producto {
-    width: 80%; /* Cambiar el ancho para ajustarse a pantallas más pequeñas */
+    width: 80%;
     margin-bottom: 20px;
   }
 }
@@ -310,15 +311,15 @@ footer a:hover {
 @media (max-width: 480px) {
   /* Para dispositivos móviles pequeños */
   header nav ul li a {
-    font-size: 14px; /* Reducir el tamaño de los enlaces */
+    font-size: 14px;
   }
 
   .hero .hero-text h1 {
-    font-size: 28px; /* Ajustar tamaño del título */
+    font-size: 28px;
   }
 
   .hero .hero-text p {
-    font-size: 14px; /* Ajustar tamaño del texto */
+    font-size: 14px;
   }
 
   .productos h2 {
@@ -331,11 +332,11 @@ footer a:hover {
   }
 
   .producto {
-    width: 100%; /* Hacer que los productos ocupen todo el ancho */
+    width: 100%;
     margin-bottom: 20px;
   }
 
   .btn-producto {
-    font-size: 14px; /* Reducir tamaño del texto del botón */
+    font-size: 14px;
   }
 }
